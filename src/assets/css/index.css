@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #10b981, #3b82f6);
+  background-size: 200% auto;
+  animation: gradient-shift 4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #3b82f6, #10b981);
+  padding: 2px;
+  border-radius: 0.75rem;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(45deg, #3b82f6, #10b981);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.code-window {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.window-header {
+  background: rgba(30, 41, 59, 0.6);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.window-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.window-dot:hover {
+  transform: scale(1.2);
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.typing-effect::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  color: #3b82f6;
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Enhanced Prism.js styling */
+pre[class*="language-"] {
+  background: #0d1117 !important;
+  padding: 1.5rem !important;
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.token.comment {
+  color: #6e7681 !important;
+  font-style: italic;
+}
+
+.token.string {
+  color: #a5d6ff !important;
+}
+
+.token.keyword {
+  color: #c792ea !important;
+}
+
+.token.function {
+  color: #82aaff !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 222 89% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 14% 34%;
+    --accent: 160 58% 82%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 222 47% 11%;
+    --chart-1: 210 90% 60%;
+    --chart-2: 160 60% 50%;
+    --chart-3: 42 100% 50%;
+    --chart-4: 300 60% 65%;
+    --chart-5: 0 75% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+    --card: 224 28% 15%;
+    --card-foreground: 0 0% 100%;
+    --popover: 224 28% 15%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 210 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 35% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 222 25% 18%;
+    --muted-foreground: 215 14% 65%;
+    --accent: 160 60% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 25% 18%;
+    --input: 222 25% 18%;
+    --ring: 210 90% 60%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.top-left-grid {
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.85;
+}
+
+.bottom-right-grid {
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 0.85;
+}
