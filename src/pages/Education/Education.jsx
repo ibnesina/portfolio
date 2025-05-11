@@ -5,7 +5,20 @@ import { motion } from "framer-motion";
 const EducationSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const educationData = [
+  const educationData = [ 
+    {
+      degree: "Bachelor of Science (B.Sc.) in CSE",
+      school: "Khulna University of Engineering & Technology",
+      board: "KUET",
+      year: "2019 – Present",
+      achievements: ["GPA: 3.72/4.00", "Dean’s Award on 3rd Year"],
+      skills: ["Data Structures", "Algorithms", "OOP", "Operating System",
+        "Database", "Computer Architecture", "Mobile Computing",
+        "Machine Learning", "NLP",
+      ],
+      description:
+        "Graduated with honors, spearheaded deep learning thesis, and led multiple full‑stack projects including a complete ecommerce system and freelancing platform.",
+    },
     {
       degree: "Higher Secondary Certificate (HSC)",
       school: "Maheshpur Govt. Degree College",
@@ -15,16 +28,6 @@ const EducationSection = () => {
       skills: ["Mathematics", "Physics", "Chemistry", "Biology", "ICT"],
       description:
         "Built a solid foundation in science and technology through rigorous coursework, laboratory experiments, and ICT integration.",
-    },    
-    {
-      degree: "Bachelor of Science (B.Sc.) in CSE",
-      school: "Khulna University of Engineering & Technology",
-      board: "KUET",
-      year: "2019 – Present",
-      achievements: ["GPA: 3.72/4.00", "Dean’s Award on 3rd Year"],
-      skills: ["Data Structures", "Algorithms", "Machine Learning", "OOP", "Operating System"],
-      description:
-        "Graduated with honors, spearheaded deep learning thesis, and led multiple full‑stack projects including a complete ecommerce system and freelancing platform.",
     },
   ];
 

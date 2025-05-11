@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Code2, Cloud, Cpu, Layout, Database } from "lucide-react";
 import { FaPython, FaLinux, FaGitAlt, FaDocker, FaAndroid, FaApple } from "react-icons/fa";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
-import { SiFirebase, SiLaravel, SiPytorch, SiScikitlearn, SiMysql } from "react-icons/si";
+import { SiFirebase, SiLaravel, SiPytorch, SiScikitlearn, SiMysql, SiSwagger } from "react-icons/si";
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
   <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-transform duration-300 hover:shadow-lg hover:shadow-blue-500/20">
@@ -55,7 +55,7 @@ const SkillsSection = () => {
       color: "text-green-400",
       skills: [
         { name: "Laravel", icon: <SiLaravel className="w-4 h-4" /> },
-        { name: "Firebase", icon: <SiFirebase className="w-4 h-4" /> },
+        { name: "Swagger",   icon: <SiSwagger className="w-4 h-4" /> },
         { name: "REST API", icon: <BsGrid1X2 className="w-4 h-4" /> },
         { name: "GitHub", icon: <FaGitAlt className="w-4 h-4" /> },
         { name: "Docker", icon: <FaDocker className="w-4 h-4" /> },
